@@ -1,0 +1,52 @@
+{
+    "name": "oxen-server",
+    "version": "0.0.1",
+    "main": "index.js",
+    "author": "Firzan Armani <mrfirzanarmani@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nodemon src/index.ts",
+        "build": "yarn migrate:deploy && tsc",
+        "start": "node dist/index.js",
+        "migrate:dev": "prisma migrate dev",
+        "migrate:deploy": "prisma migrate deploy",
+        "migrate:status": "prisma migrate status",
+        "generate": "prisma generate",
+        "lint": "eslint .",
+        "prettier:check": "prettier --check .",
+        "prettier:write": "prettier --write .",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.4.2",
+        "@commitlint/config-conventional": "^17.4.2",
+        "@types/express": "^4.17.15",
+        "@types/node": "^18.11.18",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.48.2",
+        "commitizen": "^4.2.6",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.0.1",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-config-standard-with-typescript": "^31.0.0",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-n": "^15.0.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.1.0",
+        "nodemon": "^2.0.20",
+        "prettier": "^2.8.3",
+        "prisma": "^4.9.0",
+        "ts-node": "^10.9.1",
+        "typescript": "*"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    }
+}
